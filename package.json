@@ -1,7 +1,7 @@
 {
   "name": "hnrss",
   "version": "1.0.0",
-  "description": "Monitors Hacker News for new posts.",
+  "description": "Monitors Hacker News for new posts",
   "main": "main.js",
   "dependencies": {
     "feedparser": "^2.2.0",
@@ -9,8 +9,14 @@
   },
   "devDependencies": {},
   "scripts": {
+    "start": "node main.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "author": "",
-  "license": "ISC"
+  "keywords": [
+    "rss",
+    "hacker-news"
+  ],
+  "author": "Simon Morgan <sjm@sjm.io> (https://sjm.io/)",
+  "license": "ISC",
+  "repository": "chingubotsteam5/hnrss"
 }
