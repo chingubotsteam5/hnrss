@@ -4,7 +4,7 @@ const crc = require("crc");
 
 const feedUrl = "https://news.ycombinator.com/rss";
 
-const secondsBetweenPolls = 10;
+const secondsBetweenPolls = 30;
 
 const seenArticles = [];
 
