@@ -1,15 +1,18 @@
 const request = require("request");
 const FeedParser = require("feedparser");
+const crc = require("crc");
 
 const feedUrl = "https://news.ycombinator.com/rss";
 
 const secondsBetweenPolls = 10;
 
-let seenArticles = [];
+const seenArticles = [];
 
 function processArticle(article) {
-  if (seenArticles.indexOf(article.guid) === -1) {
-    seenArticles.push(article.guid);
+  const checksum = crc.crc32(article.guid).toString(16);
+  if (seenArticles.indexOf(checksum) === -1) {
+    seenArticles.push(checksum);
+    console.log(seenArticles);
     console.log(article.title);
   }
 }
