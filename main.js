@@ -12,7 +12,6 @@ function processArticle(article) {
   const checksum = crc.crc32(article.guid).toString(16);
   if (seenArticles.indexOf(checksum) === -1) {
     seenArticles.push(checksum);
-    console.log(seenArticles);
     console.log(article.title);
   }
 }
