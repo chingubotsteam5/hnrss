@@ -5,8 +5,13 @@ const feedUrl = "https://news.ycombinator.com/rss";
 
 const secondsBetweenPolls = 10;
 
+let seenArticles = [];
+
 function processArticle(article) {
-  console.log(article.title);
+  if (seenArticles.indexOf(article.guid) === -1) {
+    seenArticles.push(article.guid);
+    console.log(article.title);
+  }
 }
 
 function checkFeed() {
