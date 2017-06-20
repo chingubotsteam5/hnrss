@@ -14,7 +14,6 @@ function checkFeed() {
   const req = request(feedUrl);
   req.on("end", () => setTimeout(checkFeed, 10000));
   req.pipe(feedparser);
-  // request(feedUrl).pipe(feedparser);
 }
 
 checkFeed();
