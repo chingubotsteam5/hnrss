@@ -3,6 +3,7 @@ const fs = require("fs");
 const request = require("request");
 const FeedParser = require("feedparser");
 const crc = require("crc");
+const chalk = require('chalk');
 
 const feedUrl = "https://news.ycombinator.com/rss";
 const secondsBetweenPolls = 30;
@@ -35,7 +36,8 @@ function processArticle(article) {
   const checksum = crc.crc32(article.guid).toString(16);
   if (seenArticles.indexOf(checksum) === -1) {
     seenArticles.push(checksum);
-    console.log(`${article.title}: ${article.link}`);
+    console.log(
+      `${chalk.bold(article.title)}: ${article.link}`);
   }
 }
 

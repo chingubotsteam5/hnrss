@@ -4,6 +4,7 @@
   "description": "Monitors Hacker News for new posts",
   "main": "main.js",
   "dependencies": {
+    "chalk": "^1.1.3",
     "crc": "^3.4.4",
     "feedparser": "^2.2.0",
     "request": "^2.81.0"
