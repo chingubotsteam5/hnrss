@@ -3,7 +3,8 @@ const fs = require("fs");
 const request = require("request");
 const FeedParser = require("feedparser");
 const crc = require("crc");
-const chalk = require('chalk');
+const chalk = require("chalk");
+const dateFormat = require("dateformat");
 
 const feedUrl = "https://news.ycombinator.com/rss";
 const secondsBetweenPolls = 30;
@@ -37,7 +38,7 @@ function processArticle(article) {
   if (seenArticles.indexOf(checksum) === -1) {
     seenArticles.push(checksum);
     console.log(
-      `${chalk.bold(article.title)}: ${article.link}`);
+      `[${chalk.blue(dateFormat(article.pubdate, "isoDateTime"))}] ${chalk.bold(article.title)}: ${article.link}`);
   }
 }
 
